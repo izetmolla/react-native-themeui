@@ -1,18 +1,13 @@
 import React, { FC } from 'react';
 
-import { View } from "react-native"
-import { usePropsResolution } from "../../hooks/usePropsResolution"
+import { Button as BtnComp } from 'react-native';
+import { usePropsResolution } from '../../hooks/usePropsResolution';
 import { ButtonProps } from './types';
 
-
 const Button: FC<ButtonProps> = ({ children, ...props }) => {
-    const { ...resolvedProps } = usePropsResolution('Button', props);
+  const { ...resolvedProps } = usePropsResolution('Button', props);
 
-    return (
-        <View {...resolvedProps} >
-            {children}
-        </View>
-    )
-}
+  return <BtnComp {...resolvedProps}>{children}</BtnComp>;
+};
 
-export default Button
+export default Button;

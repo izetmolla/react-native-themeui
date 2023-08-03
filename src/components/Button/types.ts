@@ -1,7 +1,4 @@
-import { PseudoComponentProps } from '../../contexts/theme';
-import type { ViewProps } from 'react-native';
+import type { ButtonProps as BtnProps } from 'react-native';
+import { PseudoComponentProps } from 'src/contexts/theme';
 
-
-export interface ButtonProps extends ViewProps, PseudoComponentProps<ViewProps["style"]> {
-
-}
+export interface ButtonProps extends BtnProps, PseudoComponentProps<BtnProps> {}
