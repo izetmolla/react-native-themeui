@@ -1,8 +1,5 @@
-import ThemeUiProvider from './core/ThemeUiProvider';
+import Box from "./components/Box";
+import Text from "./components/Text";
+import ThemeUiProvider, { ThemeUiActionContext, ThemeUiContext } from "./contexts/ThemeUiProvider";
 
-
-
-export {
-    ThemeUiProvider
-}
-
+export { ThemeUiContext, ThemeUiActionContext, ThemeUiProvider, Box, Text }

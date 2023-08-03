@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { ThemeUiProvider } from 'react-native-themeui';
+import { Box, ThemeUiProvider } from 'react-native-themeui';
 
 export default function App() {
 
@@ -12,7 +12,9 @@ export default function App() {
   return (
     <ThemeUiProvider>
       <View style={styles.container}>
-        <Text>Result:</Text>
+        <Box  >
+          <Text>Result:</Text>
+        </Box>
       </View>
     </ThemeUiProvider>
 
