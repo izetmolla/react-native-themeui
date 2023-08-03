@@ -12,8 +12,9 @@ const ThemeUiActionContext = createContext<ThemeActionTypes>({
     setThemeMode: () => { }
 });
 
-const ThemeUiProvider: FC<ThemeUiProviderProps> = ({ children, mode = "light" }) => {
-    const [theme, setTheme] = useState<ThemeUiTypes>({ ...defaultTheme, mode });
+const ThemeUiProvider: FC<ThemeUiProviderProps> = ({ mode = "light", children }) => {
+    defaultTheme.mode = mode;
+    const [theme, setTheme] = useState<ThemeUiTypes>(defaultTheme);
 
     const setThemeMode = (mode: 'light' | 'dark' = 'light') => setTheme({ ...theme, mode });
 

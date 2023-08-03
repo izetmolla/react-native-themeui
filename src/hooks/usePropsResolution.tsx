@@ -1,4 +1,5 @@
-import { useTheme } from "./useTheme";
+import { useContext } from "react";
+import { ThemeUiContext } from "../contexts/ThemeUiProvider";
 
 
 export function usePropsResolution(
@@ -13,10 +14,10 @@ export function usePropsResolution(
     //     extendTheme?: string[];
     // }
 ) {
-    const { theme } = useTheme();
+    const { mode, colors } = useContext(ThemeUiContext);
 
 
-    const optionalStyle = theme.mode === "light" ? incomingProps?._light : incomingProps?._dark
-    const style: any = theme.colors[theme.mode][component]
+    const optionalStyle = mode === "light" ? incomingProps?._light : incomingProps?._dark
+    const style: any = colors[mode][component]
     return { ...incomingProps, style: { ...style, ...optionalStyle, ...incomingProps?.style } };
 }
