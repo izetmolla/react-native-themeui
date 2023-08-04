@@ -1,5 +1,3 @@
-
-
 export interface IconProps {
   as?: any;
   /**

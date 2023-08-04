@@ -16,5 +16,5 @@ export {
   Text,
   useTheme,
   Button,
-  Pressable
+  Pressable,
 };

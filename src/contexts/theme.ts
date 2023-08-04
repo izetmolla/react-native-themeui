@@ -23,7 +23,7 @@ interface ThemeUiTypes {
   colors: {
     light: {
       Pressable: IPressableProps;
-      Icon: IconProps
+      Icon: IconProps;
       Navigation: NavigationTypes;
       Box: BoxProps['style'];
       Text: TextProps['style'];
@@ -31,7 +31,7 @@ interface ThemeUiTypes {
     };
     dark: {
       Pressable: IPressableProps;
-      Icon: IconProps
+      Icon: IconProps;
       Navigation: NavigationTypes;
       Box: BoxProps['style'];
       Text: TextProps['style'];

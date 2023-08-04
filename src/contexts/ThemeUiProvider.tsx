@@ -8,7 +8,7 @@ interface ThemeUiProviderProps {
 
 const ThemeUiContext = createContext<ThemeUiTypes>(defaultTheme);
 const ThemeUiActionContext = createContext<ThemeActionTypes>({
-  setThemeMode: () => { },
+  setThemeMode: () => {},
 });
 
 const ThemeUiProvider: FC<ThemeUiProviderProps> = ({
@@ -18,8 +18,9 @@ const ThemeUiProvider: FC<ThemeUiProviderProps> = ({
   defaultTheme.mode = mode;
   const [theme, setTheme] = useState<ThemeUiTypes>(defaultTheme);
 
-  const setThemeMode = (mode: 'light' | 'dark' = 'light') =>
-    setTheme({ ...theme, mode });
+  // eslint-disable-next-line @typescript-eslint/no-shadow
+  const setThemeMode = (mode: 'light' | 'dark') =>
+    setTheme({ ...theme, mode: mode });
 
   return (
     <ThemeUiContext.Provider value={theme}>

@@ -4,20 +4,14 @@ import { StyleSheet, View, Text } from 'react-native';
 import { Box, ThemeUiProvider } from 'react-native-themeui';
 
 export default function App() {
-
-
-
-
-
   return (
     <ThemeUiProvider>
       <View style={styles.container}>
-        <Box  >
+        <Box>
           <Text>Result:</Text>
         </Box>
       </View>
     </ThemeUiProvider>
-
   );
 }
 
