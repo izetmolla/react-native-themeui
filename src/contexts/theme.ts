@@ -1,6 +1,6 @@
-import { IconProps } from 'src/components/Icon/types';
+import { IconProps } from '../components/Icon/types';
 import { ButtonProps } from '../components/Button/types';
-import { IPressableProps } from 'src/components/Pressable/types';
+import { IPressableProps } from '..//components/Pressable/types';
 
 export interface PseudoComponentProps<T> {
   _light?: T;
