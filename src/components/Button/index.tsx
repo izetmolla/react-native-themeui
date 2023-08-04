@@ -1,13 +1,31 @@
 import React, { FC, memo } from 'react';
 
-import { Button as BtnComp } from 'react-native';
+import { TouchableOpacity, StyleSheet } from 'react-native';
 import { usePropsResolution } from '../../hooks/usePropsResolution';
 import { ButtonProps } from './types';
+import Text from '../Text';
 
-const Button: FC<ButtonProps> = ({ children, ...props }) => {
+const Button: FC<ButtonProps> = ({ children, title, ...props }) => {
   const { ...resolvedProps } = usePropsResolution('Button', props);
+  return (
+    <TouchableOpacity style={styles.button} {...resolvedProps}>
+      {title ? <Text style={styles.buttonText}>{title}</Text> : children}
+    </TouchableOpacity>
+  )
 
-  return <BtnComp {...resolvedProps}>{children}</BtnComp>;
+  // return <BtnComp {...resolvedProps}>{children}</BtnComp>;
 };
 
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: '#3498db',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 18,
+  },
+});
 export default memo(Button);
