@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 
 import { Text as TxtComp } from 'react-native';
 import { usePropsResolution } from '../../hooks/usePropsResolution';
@@ -10,4 +10,4 @@ const Text: FC<TextProps> = ({ children, ...props }) => {
   return <TxtComp {...resolvedProps}>{children}</TxtComp>;
 };
 
-export default Text;
+export default memo(Text);

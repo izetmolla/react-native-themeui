@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 
 import { Button as BtnComp } from 'react-native';
 import { usePropsResolution } from '../../hooks/usePropsResolution';
@@ -10,4 +10,4 @@ const Button: FC<ButtonProps> = ({ children, ...props }) => {
   return <BtnComp {...resolvedProps}>{children}</BtnComp>;
 };
 
-export default Button;
+export default memo(Button);

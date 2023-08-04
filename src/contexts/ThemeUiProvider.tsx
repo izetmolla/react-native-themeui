@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useState, createContext } from 'react';
+import React, { FC, ReactNode, useState, createContext, memo } from 'react';
 import defaultTheme, { ThemeUiTypes, ThemeActionTypes } from './theme';
 
 interface ThemeUiProviderProps {
@@ -8,7 +8,7 @@ interface ThemeUiProviderProps {
 
 const ThemeUiContext = createContext<ThemeUiTypes>(defaultTheme);
 const ThemeUiActionContext = createContext<ThemeActionTypes>({
-  setThemeMode: () => {},
+  setThemeMode: () => { },
 });
 
 const ThemeUiProvider: FC<ThemeUiProviderProps> = ({
@@ -31,4 +31,4 @@ const ThemeUiProvider: FC<ThemeUiProviderProps> = ({
 };
 
 export { ThemeUiContext, ThemeUiActionContext };
-export default ThemeUiProvider;
+export default memo(ThemeUiProvider);

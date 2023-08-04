@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 
 import { View } from 'react-native';
 import { usePropsResolution } from '../../hooks/usePropsResolution';
@@ -15,4 +15,4 @@ const Box: FC<BoxProps> = ({ children, ...props }) => {
   return <View {...resolvedProps}>{children}</View>;
 };
 
-export default Box;
+export default memo(Box);

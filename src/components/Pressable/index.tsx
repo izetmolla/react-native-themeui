@@ -1,4 +1,4 @@
-import React, { forwardRef, memo } from 'react';
+import React, { memo } from 'react';
 import { Pressable as RNPressable } from 'react-native';
 import { usePropsResolution } from '../../hooks/usePropsResolution';
 
@@ -108,4 +108,4 @@ const Pressable = (
     );
 };
 
-export default memo(forwardRef(Pressable));
+export default memo(Pressable);
