@@ -1,9 +1,39 @@
-import { PseudoComponentProps } from '../../contexts/theme';
-import type { ViewProps } from 'react-native';
 
-export interface IconProps
-  extends ViewProps,
-    PseudoComponentProps<ViewProps['style']> {
-  as: React.ReactNode;
-  name: string;
+
+export interface IconProps {
+  as?: any;
+  /**
+   * The viewBox of the icon.
+   */
+  // viewBox?: string;
+  /**
+   * The size of the icon.
+   */
+  size?: number;
+
+  /**
+   * The color of the icon.
+   */
+  // color?: string;
+  color?: string;
+  /**
+   *
+   */
+  // focusable?: boolean;
+  /**
+   *
+   */
+  children?: JSX.Element[] | JSX.Element;
+  /**
+   *
+   */
+  name?: string;
+  /**
+   *
+   */
+  // stroke?: string;
+  /**
+   *
+   */
+  // strokeWidth?: string;
 }

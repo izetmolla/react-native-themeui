@@ -2,32 +2,34 @@ import { useContext } from 'react';
 import { ThemeUiContext } from '../contexts/ThemeUiProvider';
 
 export function usePropsResolution(
-  component: 'Box' | 'Text' | 'Button',
-  incomingProps: any
-  // state?: any,
-  // config?: {
-  //     componentTheme?: any;
-  //     resolveResponsively?: string[];
-  //     ignoreProps?: string[];
-  //     cascadePseudoProps?: boolean;
-  //     extendTheme?: string[];
-  // }
+    component: 'Box' | 'Text' | 'Button' | 'Icon' | 'Pressable',
+    incomingProps: any,
+    _state?: any,
+    _config?: {
+        componentTheme?: any;
+        resolveResponsively?: string[];
+        ignoreProps?: string[];
+        cascadePseudoProps?: boolean;
+        extendTheme?: string[];
+    }
 ) {
-  const { mode, colors } = useContext(ThemeUiContext);
+    const { mode, colors } = useContext(ThemeUiContext);
 
-  const optionalStyle =
-    mode === 'light' ? incomingProps?._light : incomingProps?._dark;
-  const style: any = colors[mode][component];
-  if (component === 'Button') {
+    const optionalStyle = (mode === 'light') ? incomingProps?._light : incomingProps?._dark;
+    const style: any = colors[mode][component];
+    if (component === 'Button') {
+        return {
+            backgroundColor: 'blue',
+            color: 'white',
+            ...incomingProps,
+            ...optionalStyle,
+        };
+    }
+
+
+
     return {
-      backgroundColor: 'blue',
-      color: 'white',
-      ...incomingProps,
-      ...optionalStyle,
+        ...incomingProps,
+        style: { ...style, ...optionalStyle, ...incomingProps?.style },
     };
-  }
-  return {
-    ...incomingProps,
-    style: { ...style, ...optionalStyle, ...incomingProps?.style },
-  };
 }

@@ -1,13 +1,15 @@
-import React, { FC } from 'react';
-
-import { View } from 'react-native';
+import React, { memo } from 'react';
 import { usePropsResolution } from '../../hooks/usePropsResolution';
 import { IconProps } from './types';
 
-const Icon: FC<IconProps> = ({ children, as, name, ...props }) => {
-  console.log({ as, name });
-  const { ...resolvedProps } = usePropsResolution('Button', props);
-  return <View {...resolvedProps}>{children}</View>;
+
+const Icon = (props: IconProps) => {
+  const { as, size, ...resolvedProps } = usePropsResolution('Icon', props);
+  return React.cloneElement(as, {
+    ...resolvedProps,
+    //@ts-ignore
+    ...as.props,
+  })
 };
 
-export default Icon;
+export default memo(Icon);
