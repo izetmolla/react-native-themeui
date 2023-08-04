@@ -19,6 +19,7 @@ export function usePropsResolution(
     const style: any = colors[mode][component];
     if (component === 'Button') {
         return {
+            ...incomingProps,
             // backgroundColor: 'blue',
             // color: 'white',
             // ...incomingProps,
