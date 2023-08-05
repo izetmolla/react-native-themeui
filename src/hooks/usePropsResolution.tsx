@@ -4,7 +4,7 @@ import { ThemeUiContext } from '../contexts/ThemeUiProvider';
 import { omit, pick } from '../utils';
 //test
 export function usePropsResolution(
-    component: 'Box' | 'Text' | 'Button' | 'Icon' | 'Pressable',
+    component: 'Box' | 'Text' | 'Button' | 'Icon' | 'Pressable' | 'Image',
     incomingProps: any,
     state?: any,
     _config?: {
@@ -15,9 +15,14 @@ export function usePropsResolution(
         extendTheme?: string[];
     }
 ) {
+    let optionalStyle: any = {};
     const { mode, colors } = useContext(ThemeUiContext);
+    if (incomingProps?.rounded) {
+        const br = typeof (incomingProps?.rounded === 'string' && incomingProps?.width) ? incomingProps?.rounded : 0;
+        optionalStyle = { ...optionalStyle, borderRadius: br }
+    }
 
-    const optionalStyle = mode === 'light' ? incomingProps?._light : incomingProps?._dark;
+    optionalStyle = (mode === 'light') ? incomingProps?._light : incomingProps?._dark;
     const style: any = colors[mode][component];
     if (component === 'Icon') {
         return {
@@ -80,3 +85,5 @@ export function usePropsResolution(
     };
 }
 // git commit -m "feat: new components added"
+
+

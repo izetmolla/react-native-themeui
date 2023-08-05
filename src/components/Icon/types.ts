@@ -1,6 +1,7 @@
 import { OpaqueColorValue, TextProps } from 'react-native';
+import { PseudoComponentProps } from '../../contexts/theme';
 
-export interface IconProps extends TextProps {
+export interface IconProps extends TextProps, PseudoComponentProps<IconProps> {
   as?: React.ReactNode | any;
   /**
    * Size of the icon, can also be passed as fontSize in the style object.

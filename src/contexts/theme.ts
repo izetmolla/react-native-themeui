@@ -1,6 +1,7 @@
 import { IconProps } from '../components/Icon/types';
 import { ButtonProps } from '../components/Button/types';
 import { IPressableProps } from '..//components/Pressable/types';
+import { ImageProps } from 'src/components/Image/types';
 
 export interface PseudoComponentProps<T> {
   _light?: T;
@@ -22,6 +23,7 @@ interface ThemeUiTypes {
   mode: 'light' | 'dark';
   colors: {
     light: {
+      Image: ImageProps;
       Pressable: IPressableProps;
       Icon: IconProps;
       Navigation: NavigationTypes;
@@ -30,6 +32,7 @@ interface ThemeUiTypes {
       Button: ButtonProps;
     };
     dark: {
+      Image: ImageProps;
       Pressable: IPressableProps;
       Icon: IconProps;
       Navigation: NavigationTypes;
@@ -62,6 +65,7 @@ export const colors: { light: any; dark: any } = {
       },
       dark: false,
     },
+    Image: {},
     Icon: {
       color: 'rgb(28, 28, 30)',
     },
@@ -87,6 +91,7 @@ export const colors: { light: any; dark: any } = {
       },
       dark: true,
     },
+    Image: {},
     Icon: {
       color: 'rgb(229, 229, 231)',
     },
