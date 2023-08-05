@@ -1,6 +1,6 @@
 {
   "name": "react-native-themeui",
-  "version": "1.1.15",
+  "version": "1.1.16",
   "description": "Essential cross-platform UI components for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
