@@ -15,7 +15,7 @@ export interface IconProps extends TextProps, PseudoComponentProps<IconProps> {
    * See Icon Explorer app
    * {@link https://expo.github.io/vector-icons/}
    */
-  name: string;
+  name?: string;
   /**
    * Color of the icon. Can be a string or OpaqueColorValue (returned from
    * PlatformColor(..))
