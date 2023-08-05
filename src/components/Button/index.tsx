@@ -6,14 +6,15 @@ import { ButtonProps } from './types';
 import Text from '../Text';
 
 const Button: FC<ButtonProps> = ({ children, title, ...props }) => {
-  const { ...resolvedProps } = usePropsResolution('Button', props);
+  const { ...resolvedProps } = usePropsResolution('Button', {
+    style: styles.button,
+    ...props,
+  });
   return (
-    <TouchableOpacity style={styles.button} {...resolvedProps}>
+    <TouchableOpacity {...resolvedProps}>
       {title ? <Text style={styles.buttonText}>{title}</Text> : children}
     </TouchableOpacity>
   );
-
-  // return <BtnComp {...resolvedProps}>{children}</BtnComp>;
 };
 
 const styles = StyleSheet.create({

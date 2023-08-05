@@ -7,6 +7,7 @@ import ThemeUiProvider, {
 } from './contexts/ThemeUiProvider';
 import { useTheme } from './hooks/useTheme';
 import Pressable from './components/Pressable';
+import Icon from './components/Icon';
 
 export {
   ThemeUiContext,
@@ -17,4 +18,5 @@ export {
   useTheme,
   Button,
   Pressable,
+  Icon,
 };

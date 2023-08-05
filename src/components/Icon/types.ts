@@ -1,37 +1,24 @@
-export interface IconProps {
-  as?: any;
+import { OpaqueColorValue, TextProps } from 'react-native';
+
+export interface IconProps extends TextProps {
+  as?: React.ReactNode | any;
   /**
-   * The viewBox of the icon.
-   */
-  // viewBox?: string;
-  /**
-   * The size of the icon.
+   * Size of the icon, can also be passed as fontSize in the style object.
+   *
+   * @default 12
    */
   size?: number;
-
   /**
-   * The color of the icon.
+   * Name of the icon to show
+   *
+   * See Icon Explorer app
+   * {@link https://expo.github.io/vector-icons/}
    */
-  // color?: string;
-  color?: string;
+  name: string;
   /**
+   * Color of the icon. Can be a string or OpaqueColorValue (returned from
+   * PlatformColor(..))
    *
    */
-  // focusable?: boolean;
-  /**
-   *
-   */
-  children?: JSX.Element[] | JSX.Element;
-  /**
-   *
-   */
-  name?: string;
-  /**
-   *
-   */
-  // stroke?: string;
-  /**
-   *
-   */
-  // strokeWidth?: string;
+  color?: string | OpaqueColorValue;
 }

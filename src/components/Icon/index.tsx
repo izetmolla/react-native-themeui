@@ -1,14 +1,13 @@
-import React, { memo } from 'react';
+import React, { FC, memo } from 'react';
 import { usePropsResolution } from '../../hooks/usePropsResolution';
 import { IconProps } from './types';
+import { omit } from '../../utils';
 
-const Icon = (props: IconProps) => {
-  const { as, ...resolvedProps } = usePropsResolution('Icon', props);
-  return React.cloneElement(as, {
-    ...resolvedProps,
-    //@ts-ignore
-    ...as.props,
-  });
+const Icon: FC<IconProps> = ({ as, ...props }) => {
+  const Comp = as;
+
+  const { ...resolvedProps } = usePropsResolution('Icon', omit(props, 'as'));
+  return <Comp {...resolvedProps} />;
 };
 
 export default memo(Icon);

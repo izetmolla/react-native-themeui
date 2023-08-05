@@ -62,11 +62,14 @@ export const colors: { light: any; dark: any } = {
       },
       dark: false,
     },
+    Icon: {
+      color: 'rgb(28, 28, 30)',
+    },
     Box: {
       backgroundColor: 'white',
     },
     Text: {
-      color: 'black',
+      color: 'rgb(28, 28, 30)',
     },
     Button: {
       backgroundColor: 'blue',
@@ -84,11 +87,14 @@ export const colors: { light: any; dark: any } = {
       },
       dark: true,
     },
+    Icon: {
+      color: 'rgb(229, 229, 231)',
+    },
     Box: {
       backgroundColor: 'black',
     },
     Text: {
-      color: 'white',
+      color: 'rgb(229, 229, 231)',
     },
     Button: {
       backgroundColor: 'blue',
