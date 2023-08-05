@@ -1,5 +1,6 @@
 import React, { FC, ReactNode, useState, createContext, memo } from 'react';
 import defaultTheme, { ThemeUiTypes, ThemeActionTypes } from './theme';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 interface ThemeUiProviderProps {
   children: ReactNode;
@@ -23,11 +24,13 @@ const ThemeUiProvider: FC<ThemeUiProviderProps> = ({
     setTheme({ ...theme, mode: mode });
 
   return (
-    <ThemeUiContext.Provider value={theme}>
-      <ThemeUiActionContext.Provider value={{ setThemeMode }}>
-        {children}
-      </ThemeUiActionContext.Provider>
-    </ThemeUiContext.Provider>
+    <SafeAreaProvider>
+      <ThemeUiContext.Provider value={theme}>
+        <ThemeUiActionContext.Provider value={{ setThemeMode }}>
+          {children}
+        </ThemeUiActionContext.Provider>
+      </ThemeUiContext.Provider>
+    </SafeAreaProvider>
   );
 };
 

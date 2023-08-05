@@ -8,6 +8,7 @@ import ThemeUiProvider, {
 import { useTheme } from './hooks/useTheme';
 import Pressable from './components/Pressable';
 import Icon from './components/Icon';
+import ParsedText from './components/ParsedText';
 
 export {
   ThemeUiContext,
@@ -19,4 +20,5 @@ export {
   Button,
   Pressable,
   Icon,
+  ParsedText,
 };
