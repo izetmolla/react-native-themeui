@@ -73,6 +73,13 @@ export function usePropsResolution(
             ...state,
         };
     }
+    if (component === 'TextInput') {
+        return {
+            ...optionalStyle,
+            inputStyles: { ...style?.inputStyles, ...optionalStyle?.inputStyles, ...incomingProps?.inputStyles },
+            ...incomingProps,
+        }
+    }
 
 
 
