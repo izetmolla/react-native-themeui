@@ -11,7 +11,15 @@ import { styles } from '../TextInput/styles';
 const Input: FC<InputProps> = ({ withFloadtingLabel = false, ...props }) => {
   const { ...resolvedProps } = usePropsResolution(
     withFloadtingLabel ? 'TextInput' : 'Input',
-    withFloadtingLabel ? { ...omit(props), ...styles } : omit(props)
+    withFloadtingLabel
+      ? {
+          ...omit(props),
+          ...styles,
+          containerStyles: { ...styles.container, ...props?.containerStyles },
+          inputStyles: { ...props?.inputStyles, color: 'red' },
+          labelStyles: { ...props?.labelStyles, color: 'red' },
+        }
+      : omit(props)
   );
 
   if (withFloadtingLabel) {
@@ -19,7 +27,9 @@ const Input: FC<InputProps> = ({ withFloadtingLabel = false, ...props }) => {
       <>
         <FloatingLabelInput {...resolvedProps} />
         {props?.error && (
-          <Text style={{ color: 'red', paddingLeft: 5 }}>{props.error}</Text>
+          <Text style={{ color: 'red', paddingLeft: 5, paddingTop: 3 }}>
+            {props.error}
+          </Text>
         )}
       </>
     );
