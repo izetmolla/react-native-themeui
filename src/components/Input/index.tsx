@@ -16,8 +16,8 @@ const Input: FC<InputProps> = ({ withFloadtingLabel = false, ...props }) => {
           ...omit(props),
           ...styles,
           containerStyles: { ...styles.container, ...props?.containerStyles },
-          inputStyles: { ...props?.inputStyles, color: 'red' },
-          labelStyles: { ...props?.labelStyles, color: 'red' },
+          inputStyles: { ...props?.inputStyles },
+          labelStyles: { ...props?.labelStyles },
         }
       : omit(props)
   );
