@@ -77,7 +77,7 @@ export function usePropsResolution(
         
         const errorStyles: any = incomingProps?.error ? {
             message: incomingProps?.error,
-            container: { ...incomingProps?.container, borderWidth: 2, borderColor: 'red' },
+            containerStyles: { ...incomingProps?.container, borderWidth: 2, borderColor: 'red' },
             inputStyles: { ...incomingProps?.inputStyles, color: 'red' },
             labelStyles: { ...incomingProps?.labelStyles, color: 'red' },
         } : {}
