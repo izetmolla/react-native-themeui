@@ -4,7 +4,7 @@ import { ThemeUiContext } from '../contexts/ThemeUiProvider';
 import { omit, pick } from '../utils';
 //test
 export function usePropsResolution(
-    component: 'Box' | 'Text' | 'Button' | 'Icon' | 'Pressable' | 'Image',
+    component: 'Box' | 'Text' | 'Button' | 'Icon' | 'Pressable' | 'Image' | 'Input' | 'TextInput',
     incomingProps: any,
     state?: any,
     _config?: {
@@ -73,6 +73,8 @@ export function usePropsResolution(
             ...state,
         };
     }
+
+
 
     return {
         ...incomingProps,

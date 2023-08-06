@@ -1,7 +1,8 @@
 import { IconProps } from '../components/Icon/types';
 import { ButtonProps } from '../components/Button/types';
 import { IPressableProps } from '..//components/Pressable/types';
-import { ImageProps } from 'src/components/Image/types';
+import { ImageProps } from '../components/Image/types';
+import { InputProps, TextInputProps } from '../components/Input/types';
 
 export interface PseudoComponentProps<T> {
   _light?: T;
@@ -19,36 +20,23 @@ interface NavigationTypes {
   dark: boolean;
 }
 
+interface ComponentTypes {
+  Input: InputProps['style'];
+  Image: ImageProps['style'];
+  Pressable: IPressableProps['style'];
+  Icon: IconProps;
+  Navigation: NavigationTypes;
+  Box: BoxProps['style'];
+  Text: TextProps['style'];
+  Button: ButtonProps;
+  TextInput: TextInputProps;
+}
+
 interface ThemeUiTypes {
   mode: 'light' | 'dark';
   colors: {
-    light: {
-      Image: ImageProps;
-      Pressable: IPressableProps;
-      Icon: IconProps;
-      Navigation: NavigationTypes;
-      Box: BoxProps['style'];
-      Text: TextProps['style'];
-      Button: ButtonProps;
-    };
-    dark: {
-      Image: ImageProps;
-      Pressable: IPressableProps;
-      Icon: IconProps;
-      Navigation: NavigationTypes;
-      Box: BoxProps['style'];
-      Text: TextProps['style'];
-      Button: ButtonProps;
-    };
-  };
-  components: {
-    Button: {};
-    Box: {};
-    Text: {
-      style: {
-        color: string;
-      };
-    };
+    light: ComponentTypes;
+    dark: ComponentTypes;
   };
 }
 
@@ -65,6 +53,9 @@ export const colors: { light: any; dark: any } = {
       },
       dark: false,
     },
+    Input: {
+      backgroundColor: 'rgb(242, 242, 242)',
+    },
     Image: {},
     Icon: {
       color: 'rgb(28, 28, 30)',
@@ -77,6 +68,11 @@ export const colors: { light: any; dark: any } = {
     },
     Button: {
       backgroundColor: 'blue',
+    },
+    TextInput: {
+      inputStyles: {
+        color: 'rgb(28, 28, 30)',
+      },
     },
   },
   dark: {
@@ -91,6 +87,9 @@ export const colors: { light: any; dark: any } = {
       },
       dark: true,
     },
+    Input: {
+      backgroundColor: 'rgb(1, 1, 1)',
+    },
     Image: {},
     Icon: {
       color: 'rgb(229, 229, 231)',
@@ -104,26 +103,16 @@ export const colors: { light: any; dark: any } = {
     Button: {
       backgroundColor: 'blue',
     },
+    TextInput: {
+      inputStyles: {
+        color: 'rgb(229, 229, 231)',
+      },
+    },
   },
 };
 const theme: ThemeUiTypes = {
   mode: 'light',
   colors: colors,
-  components: {
-    Box: {
-      backgroundColor: 'red',
-    },
-    Text: {
-      style: {
-        color: 'white',
-      },
-    },
-    Button: {
-      style: {
-        backgroundColor: 'blue',
-      },
-    },
-  },
 };
 
 interface ThemeActionTypes {

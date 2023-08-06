@@ -9,6 +9,7 @@ import { useTheme } from './hooks/useTheme';
 import Pressable from './components/Pressable';
 import Icon from './components/Icon';
 import ParsedText from './components/ParsedText';
+import Input from './components/Input';
 
 export {
   ThemeUiContext,
@@ -21,4 +22,5 @@ export {
   Pressable,
   Icon,
   ParsedText,
+  Input,
 };
