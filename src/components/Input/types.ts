@@ -11,5 +11,6 @@ export interface InputProps
     PseudoComponentProps<TextInputProps['style']>,
     PseudoComponentProps<FloatTextInputProps['style']> {
   withFloadtingLabel?: boolean;
+  error?: string;
 }
 export { TextInputProps };

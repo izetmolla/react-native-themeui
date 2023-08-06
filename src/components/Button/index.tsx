@@ -1,18 +1,41 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, { FC, memo } from 'react';
 
-import { TouchableOpacity, StyleSheet } from 'react-native';
+import {
+  TouchableOpacity,
+  StyleSheet,
+  ActivityIndicator,
+  View,
+} from 'react-native';
 import { usePropsResolution } from '../../hooks/usePropsResolution';
 import { ButtonProps } from './types';
+import { omit } from '../../utils';
 import Text from '../Text';
 
 const Button: FC<ButtonProps> = ({ children, title, ...props }) => {
   const { ...resolvedProps } = usePropsResolution('Button', {
     style: styles.button,
-    ...props,
+    ...omit(props, 'leftIcon', 'rightIcon'),
   });
   return (
     <TouchableOpacity {...resolvedProps}>
-      {title ? <Text style={styles.buttonText}>{title}</Text> : children}
+      {props.loading ? (
+        <ActivityIndicator />
+      ) : (
+        <View
+          style={[
+            {
+              flexDirection: 'row',
+              justifyContent: 'space-around',
+            },
+            props?.contentStyle,
+          ]}
+        >
+          {props.leftIcon && props.leftIcon}
+          {title ? <Text style={styles.buttonText}>{title}</Text> : children}
+          {props.rightIcon && props.rightIcon}
+        </View>
+      )}
     </TouchableOpacity>
   );
 };

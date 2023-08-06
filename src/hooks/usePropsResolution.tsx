@@ -74,10 +74,18 @@ export function usePropsResolution(
         };
     }
     if (component === 'TextInput') {
+        
+        const errorStyles: any = incomingProps?.error ? {
+            message: incomingProps?.error,
+            containerStyles: { ...incomingProps?.containerStyles, borderWidth: 2, borderColor: 'red' },
+            inputStyles: { ...incomingProps?.inputStyles, color: 'red' },
+            labelStyles: { ...incomingProps?.labelStyles, color: 'red' },
+        } : {}
         return {
             ...optionalStyle,
             inputStyles: { ...style?.inputStyles, ...optionalStyle?.inputStyles, ...incomingProps?.inputStyles },
             ...incomingProps,
+            ...errorStyles,
         }
     }
 

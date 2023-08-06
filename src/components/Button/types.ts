@@ -1,3 +1,4 @@
+import { ViewProps } from 'react-native';
 import { PseudoComponentProps } from '../../contexts/theme';
 import { TouchableOpacityProps } from 'react-native';
 
@@ -45,7 +46,9 @@ export interface ButtonProps
   bottom?: number | string;
   left?: number | string;
   right?: number | string;
-
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
+  contentStyle?: ViewProps['style'];
   disabled?: boolean;
   loading?: boolean;
   loadingColor?: string;
