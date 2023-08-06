@@ -1,6 +1,6 @@
 {
   "name": "react-native-themeui",
-  "version": "1.1.19",
+  "version": "1.1.20",
   "description": "Essential cross-platform UI components for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -77,7 +77,8 @@
   },
   "dependencies": {
     "@react-native-aria/focus": "^0.2.8",
-    "react-native-parsed-text": "^0.0.22"
+    "react-native-parsed-text": "^0.0.22",
+    "react-native-reanimated": "^3.4.2"
   },
   "resolutions": {
     "@types/react": "17.0.21"
