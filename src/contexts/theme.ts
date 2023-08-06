@@ -70,6 +70,7 @@ export const colors: { light: any; dark: any } = {
       backgroundColor: 'blue',
     },
     TextInput: {
+      darkTheme: false,
       inputStyles: {
         color: 'rgb(28, 28, 30)',
       },
@@ -104,6 +105,7 @@ export const colors: { light: any; dark: any } = {
       backgroundColor: 'blue',
     },
     TextInput: {
+      darkTheme: true,
       inputStyles: {
         color: 'rgb(229, 229, 231)',
       },
